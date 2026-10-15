@@ -9,17 +9,22 @@ export default function Footer() {
         <Link href="/" aria-label="PrimeGearLab home" className="shrink-0">
           <Image src={SITE.logo.src} alt={SITE.logo.alt} width={SITE.logo.width} height={SITE.logo.height} className="h-24 w-auto" />
         </Link>
-        <div className="max-w-xl md:ml-auto md:text-right">
+
+        {/* Right-hand wrapper: sits on the right on desktop; its own text is left-aligned so lines wrap evenly. */}
+        <div className="w-full max-w-xl md:ml-auto">
           <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end">
             <Link className="hover:text-white" href="/privacy">Privacy Policy</Link>
             <Link className="hover:text-white" href="/terms">Terms of Service</Link>
             <Link className="hover:text-white" href="/affiliate-disclosure">Affiliate Disclosure</Link>
             <Link className="hover:text-white" href="/contact">Contact</Link>
           </nav>
-          <p className="mt-4">{SITE.disclosure}</p>
-          <p className="mt-2">PrimeGearLab is an independent publisher, not NIU. Purchases are completed on NIU's store.</p>
-          <p className="mt-2">Contact Email: <a className="underline" href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
-          <p className="mt-4">© 2026 PrimeGearLab. All rights reserved. Managed &amp; Operated in partnership with authorized media agency partners.</p>
+
+          <div className="mt-4 space-y-2 text-left">
+            <p>{SITE.disclosure}</p>
+            <p>PrimeGearLab is an independent publisher, not NIU. Purchases are completed on NIU's store.</p>
+            <p>Contact Email: <a className="underline" href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+            <p>© 2026 PrimeGearLab. All rights reserved. Managed &amp; Operated in partnership with authorized media agency partners.</p>
+          </div>
         </div>
       </div>
     </footer>
