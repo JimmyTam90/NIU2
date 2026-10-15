@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import AffiliateCta from "./AffiliateCta";
 import { resolveCollectionUrl } from "@/lib/affiliate-links";
 import { SITE } from "@/lib/site-config";
@@ -20,9 +21,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-ink text-white">
       <div className="mx-auto flex max-w-6xl items-center px-4 py-2">
-        <a href="/" aria-label="PrimeGearLab home" className="shrink-0">
+        <Link href="/" aria-label="PrimeGearLab home" className="shrink-0">
           <Image src={SITE.logo.src} alt={SITE.logo.alt} width={SITE.logo.width} height={SITE.logo.height} priority className="h-16 w-auto" />
-        </a>
+        </Link>
 
         <div className="ml-auto hidden items-center gap-6 md:flex">
           <nav aria-label="Primary" className="flex items-center gap-6 text-sm font-medium">
@@ -50,7 +51,7 @@ export default function Header() {
       {open ? (
         <div id="mobile-menu" className="border-t border-white/10 bg-ink px-4 pb-4 md:hidden">
           <nav aria-label="Mobile" className="flex flex-col">
-            <a href="/" onClick={() => setOpen(false)} className="min-h-[48px] py-3 font-medium">Home</a>
+            <Link href="/" onClick={() => setOpen(false)} className="min-h-[48px] py-3 font-medium">Home</Link>
             {NAV.map(([label, href]) => (
               <a key={href} href={href} onClick={() => setOpen(false)} className="min-h-[48px] py-3 font-medium">{label}</a>
             ))}
